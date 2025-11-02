@@ -1,0 +1,8 @@
+jax[cuda]
+equinox
+optax
+flashbax
+gymnasium
+numpy
+wandb
+aim

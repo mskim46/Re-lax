@@ -6,7 +6,10 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "flax>=0.12.0",
+    "gymnasium>=1.2.2",
     "jax[cuda12]>=0.8.0",
+    "minari[hdf5,hf]>=0.5.3",
     "numpy>=2.3.4",
     "optax>=0.2.6",
+    "pillow>=12.0.0",
 ]

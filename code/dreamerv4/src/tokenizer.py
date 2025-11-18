@@ -120,6 +120,9 @@ def psnr_from_mse(mse_value: jnp.ndarray, max_value: float = 1.0) -> jnp.ndarray
     eps = 1e-8
     return 20.0 * jnp.log10(max_value) - 10.0 * jnp.log10(jnp.maximum(mse_value, eps))
 
+def lpips_loss(x: jnp.ndarray, x_hat: jnp.ndarray) -> jnp.ndarray:
+    return lpips.compute_loss(x, x_hat)
+
 class TokenizerTrainState(train_state.TrainState):
     # Mark non-array fields as static so JAX/JIT won't trace them.
     model_apply : Callable[..., Any] = struct.field(pytree_node=False)
